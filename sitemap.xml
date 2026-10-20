@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HIER ÄNDERN: „beispiel-domain.de" vor Livegang durch die echte Domain
+     ersetzen (siehe WARTUNG.md, Kapitel „Vor dem Livegang"). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.beispiel-domain.de/</loc>
+  </url>
+</urlset>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ✏️ HIER ÄNDERN: Seitentitel und Beschreibung (erscheinen bei Google) -->
+  <title>Betreutes Wohnen Münster-Hiltrup – Servicewohnen für Senioren</title>
+  <meta name="description" content="Seniorengerechte Wohnungen mit Service in Münster-Hiltrup: Betreuung, Unterstützung im Alltag und persönliche Beratung. Selbstbestimmt leben am Hoffmann-von-Fallersleben-Weg.">
+
+  <!-- ⚠️ NICHT ÄNDERN (Technik): Domain wird vor Livegang zentral ersetzt,
+       siehe WARTUNG.md Kapitel „Vor dem Livegang“ -->
+  <link rel="canonical" href="https://www.beispiel-domain.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Betreutes Wohnen Münster">
+  <meta property="og:title" content="Betreutes Wohnen Münster-Hiltrup – Servicewohnen für Senioren">
+  <meta property="og:description" content="Seniorengerechte Wohnungen mit Service in Münster-Hiltrup: Betreuung, Unterstützung im Alltag und persönliche Beratung.">
+  <meta property="og:url" content="https://www.beispiel-domain.de/">
+  <meta property="og:image" content="https://www.beispiel-domain.de/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+
+  <!-- ⚠️ NICHT ÄNDERN (Technik): Strukturierte Daten für Google.
+       Ausnahme: Telefonnummer/E-Mail dürfen zwischen den Anführungszeichen
+       angepasst werden. Ein Tippfehler hier macht die Seite NICHT kaputt,
+       nur die Google-Vorschau. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ApartmentComplex",
+        "@id": "https://www.beispiel-domain.de/#anlage",
+        "name": "Betreutes Wohnen Münster",
+        "description": "Servicewohnen in Münster-Hiltrup: seniorengerechte Wohnungen mit Betreuung, Unterstützung im Alltag und persönlicher Beratung.",
+        "url": "https://www.beispiel-domain.de/",
+        "telephone": "+492501448014",
+        "email": "service@altenhilfe-zentrum.de",
+        "image": "https://www.beispiel-domain.de/assets/images/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hoffmann-von-Fallersleben-Weg 30+32, 53+55",
+          "postalCode": "48165",
+          "addressLocality": "Münster",
+          "addressRegion": "Nordrhein-Westfalen",
+          "addressCountry": "DE"
+        },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Aufzug", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Seniorengerechtes Bad", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Balkon oder Terrasse", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Fußbodenheizung", "value": true }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.beispiel-domain.de/#betreiberin",
+        "name": "Grundstücksverwertung Storkamp GmbH & Co. KG",
+        "url": "https://www.beispiel-domain.de/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "An der Alten Kirche 34",
+          "postalCode": "48165",
+          "addressLocality": "Münster",
+          "addressCountry": "DE"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+492501448014",
+          "email": "service@altenhilfe-zentrum.de",
+          "availableLanguage": "German"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+<!-- ============================================================
+     KOPFBEREICH (Navigation)
+     ============================================================ -->
+<header class="site-header" data-header>
+  <div class="site-header__inner u-container">
+    <a class="site-header__brand" href="#start" aria-label="Betreutes Wohnen Münster – zum Seitenanfang">
+      <svg class="site-header__logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M8 58 L8 30 L11.5 30 L11.5 24.5 L15 24.5 L15 19 L18.5 19 L18.5 13.5 L25.5 13.5 L25.5 19 L29 19 L29 24.5 L32.5 24.5 L32.5 30 L36 30 L36 58 Z"/><path fill="currentColor" opacity="0.62" d="M33 58 L33 34 L36 34 L36 29 L39 29 L39 24 L42 24 L42 19 L48 19 L48 24 L51 24 L51 29 L54 29 L54 34 L57 34 L57 58 Z"/>
+      </svg>
+      <span class="site-header__wordmark">
+        Betreutes Wohnen
+        <small>Münster-Hiltrup</small>
+      </span>
+    </a>
+
+    <button class="site-header__menu-toggle" type="button" hidden
+            data-menu-toggle aria-expanded="false" aria-controls="hauptmenue">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+        <line x1="4" x2="20" y1="7" y2="7"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="17" y2="17"/>
+      </svg>
+      Menü
+    </button>
+
+    <nav class="site-header__nav" id="hauptmenue" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#wohnen">Wohnen</a></li>
+        <li><a href="#wohnungen">Wohnungen</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+
+    <!-- ✏️ HIER ÄNDERN: Telefonnummer (steht auch im Kontaktbereich, im
+         Fußbereich-Link „tel:“, im Impressum und in der Datenschutzerklärung —
+         Fundstellen-Tabelle siehe WARTUNG.md Kapitel 4) -->
+    <a class="site-header__phone" href="tel:+492501448014" aria-label="Anrufen: 02501 4480-14 – Sprechzeiten Montag und Donnerstag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span class="site-header__phone-number">02501 4480-14</span>
+      <span class="site-header__phone-hint">Mo &amp; Do erreichbar</span>
+    </a>
+  </div>
+</header>
+
+<main id="inhalt">
+
+  <!-- ============================================================
+       HERO (Startbild)
+       ============================================================ -->
+  <section class="hero" id="start" aria-labelledby="hero-titel">
+    <div class="hero__media" data-parallax>
+      <!-- ✏️ BILD TAUSCHEN: Datei „hero-aussenansicht.jpg“ im Ordner
+           assets/images/ durch ein Foto GLEICHEN NAMENS ersetzen (Querformat
+           16:9, ca. 1920×1080 Pixel). Anleitung: WARTUNG.md Kap. 5 -->
+      <img src="assets/images/hero-aussenansicht.jpg" width="1920" height="1080"
+           alt="Haus 55 der Wohnanlage am Hoffmann-von-Fallersleben-Weg: dreigeschossiger Klinkerbau mit Balkonen, davor eine große Rasenfläche und alte Bäume"
+           fetchpriority="high">
+    </div>
+    <div class="hero__content u-container">
+      <div class="hero__text">
+        <!-- ✏️ HIER ÄNDERN: Ortsmarke, Überschrift und Einleitungstext -->
+        <p class="hero__badge">Münster-Hiltrup</p>
+        <h1 id="hero-titel">Selbstbestimmt leben.<br>In bester Gesellschaft.</h1>
+        <p class="hero__lead">Wohnen Sie in hochwertigem Ambiente – sicher, komfortabel und bestens versorgt im Herzen von Münster-Hiltrup.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="tel:+492501448014">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Jetzt anrufen
+          </a>
+          <a class="btn btn--ghost" href="#leistungen">Leistungen ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USP-Leiste: drei Kernversprechen.
+       ✏️ HIER ÄNDERN: Formulierungen (Textbausteine des Betreibers, Juli 2026). -->
+  <section class="usp" aria-label="Das Wichtigste auf einen Blick">
+    <div class="u-container usp__grid">
+      <div class="usp__item" data-reveal>
+        <svg class="usp__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/><path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z"/>
+        </svg>
+        <p><strong>Unterstützung im Alltag</strong> genau wie Sie es brauchen</p>
+      </div>
+      <div class="usp__item" data-reveal>
+        <svg class="usp__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+        <p><strong>Persönliche Ansprechpartner vor Ort</strong> vertraut und verlässlich</p>
+      </div>
+      <div class="usp__item" data-reveal>
+        <svg class="usp__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M8 58 L8 30 L11.5 30 L11.5 24.5 L15 24.5 L15 19 L18.5 19 L18.5 13.5 L25.5 13.5 L25.5 19 L29 19 L29 24.5 L32.5 24.5 L32.5 30 L36 30 L36 58 Z"/><path fill="currentColor" opacity="0.62" d="M33 58 L33 34 L36 34 L36 29 L39 29 L39 24 L42 24 L42 19 L48 19 L48 24 L51 24 L51 29 L54 29 L54 34 L57 34 L57 58 Z"/>
+        </svg>
+        <p><strong>Wohnambiente</strong> mit Stil und Atmosphäre</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LEISTUNGEN (Herzstück der Seite)
+       ============================================================ -->
+  <section class="services" id="leistungen" aria-labelledby="leistungen-titel">
+    <div class="u-container">
+      <header class="section-head" data-reveal>
+        <p class="section-head__eyebrow">Mehr als nur Wohnen</p>
+        <!-- ✏️ HIER ÄNDERN: Überschrift und Einleitung der Service-Sektion -->
+        <h2 id="leistungen-titel">Service, genau wie Sie es sich wünschen</h2>
+        <p class="section-head__lead">In unseren Häusern bieten wir allen Bewohnerinnen und Bewohnern Betreuung und Unterstützung im Alltag. Dafür gibt es ein Basispaket, das Sie jederzeit um zusätzliche Leistungen aufstocken können.</p>
+      </header>
+
+      <ul class="services__icons" role="list">
+        <li data-reveal>
+          <span class="services__icon-disc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/>
+            </svg>
+          </span>
+          Gemeinschaft
+        </li>
+        <li data-reveal>
+          <span class="services__icon-disc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          Beratung
+        </li>
+        <li data-reveal>
+          <span class="services__icon-disc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>
+            </svg>
+          </span>
+          Reinigungsdienste
+        </li>
+        <li data-reveal>
+          <span class="services__icon-disc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
+            </svg>
+          </span>
+          Wäscheservice
+        </li>
+      </ul>
+
+      <div class="services__card" data-reveal>
+        <h3>Unsere garantierten Leistungen für Sie</h3>
+        <!-- ✏️ HIER ÄNDERN: Die Liste der garantierten Leistungen (Basispaket,
+             vom Betreiber bestätigt Juli 2026). Jede Leistung steht in einem
+             eigenen <li>…</li>. Zum Ergänzen eine Zeile kopieren und den Text
+             ändern. Die Klasse u-grid-span-all lässt einen langen Punkt über
+             die volle Breite laufen. -->
+        <ul class="services__list" role="list">
+          <li>Basisreinigungen der Wohnräume</li>
+          <li>Fensterreinigung</li>
+          <li>Wäscheservice für Bettwäsche und Handtücher inkl. Auf- und Abziehen der Betten</li>
+          <li>Unterstützung bei der Haustechnik inkl. kleiner Reparaturen</li>
+          <li>Regelmäßige Präsenz mit festen Sprechzeiten</li>
+          <li>Gespräche bei Fragen des Alltags und zur sozialen Betreuung</li>
+          <li>Vermittlung und Koordination weiterer Hilfen wie ambulanter Dienste</li>
+          <li>Vorbereitung und Unterstützung der Wohn- und Lebenssituation bei erweitertem Hilfebedarf</li>
+          <li>Kontaktbesuche (bei Bedarf einmal wöchentlich)</li>
+          <li>Unterstützung und Organisation von Aktivitäten und Veranstaltungen</li>
+          <li>Hilfestellung beim Ausfüllen von Anträgen für die Gewährung von Sozialversicherungs- und Sozialhilfeleistungen</li>
+          <li class="u-grid-span-all">Verwaltungstätigkeit und Dokumentation, Information über Betreuungs- und Serviceleistungen sowie die bevorzugte Aufnahme in die vollstationären und/oder teilstationären Einrichtungen Tageshaus St. Clemens, Tageshaus St. Marien, Meyer-Suhrheinrich-Haus und das Marienheim der Altenhilfe-Zentrum St. Clemens Münster-Hiltrup gGmbH</li>
+        </ul>
+
+        <!-- ✏️ HIER ÄNDERN: Zusätzlich buchbare Wahlleistungen -->
+        <h4>Weitere Wahlleistungen</h4>
+        <ul class="services__list" role="list">
+          <li>Zusätzliche Wohnungsreinigungen</li>
+          <li>Zusätzlicher Wäscheservice</li>
+          <li>Zusätzliche Fensterreinigungen</li>
+        </ul>
+
+        <div class="services__note">
+          <!-- ✏️ HIER ÄNDERN: Hinweistext unter der Leistungsliste -->
+          <p>In Rücksprache mit Ihnen können wir ein ganz individuelles Paket anbieten, das sich an Ihre Bedürfnisse anpasst. Dabei versuchen wir ganz auf Ihre Wünsche einzugehen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       IMPRESSIONEN — vollbreites Bildband: ein großes und zwei kleine Fotos
+       ✏️ BILDER TAUSCHEN: impression-01-eingang.jpg (groß, 1500×1000),
+       impression-02-treppenhaus.jpg und impression-03-terrasse.jpg (je 900×600),
+       alle Querformat 3:2. Bildbeschreibung = alt="…"
+       ============================================================ -->
+  <section class="impressions" aria-label="Impressionen aus der Wohnanlage">
+    <ul class="impressions__grid" role="list" data-reveal>
+      <li><img src="assets/images/impression-01-eingang.jpg" width="1500" height="1000" alt="Hauseingang mit gelben Fenster- und Türrahmen, davor lila blühende Sträucher und Töpfe mit pinkfarbenen Geranien" loading="lazy"></li>
+      <li><img src="assets/images/impression-02-treppenhaus.jpg" width="900" height="600" alt="Helles Treppenhaus mit großer Fensterfront und Zimmerpflanzen, rechts eine grün gestrichene Wand" loading="lazy"></li>
+      <li><img src="assets/images/impression-03-terrasse.jpg" width="900" height="600" alt="Terrasse mit Gartenmöbeln und Blumenschmuck, dahinter der grüne Garten" loading="lazy"></li>
+    </ul>
+  </section>
+
+  <!-- ============================================================
+       WOHNEN & AUSSTATTUNG
+       ============================================================ -->
+  <section class="living" id="wohnen" aria-labelledby="wohnen-titel">
+    <div class="u-container">
+      <header class="section-head" data-reveal>
+        <p class="section-head__eyebrow">Wohnen</p>
+        <!-- ✏️ HIER ÄNDERN: Überschrift und Texte des Wohnen-Bereichs -->
+        <h2 id="wohnen-titel">Zuhause am Hoffmann-von-Fallersleben-Weg</h2>
+        <p class="section-head__lead">Unsere Wohnungen in Hiltrup bieten Ihnen den idealen Rückzugsort mitten im Leben. Die zentrale Lage und die guten Verkehrsanbindungen fördern Ihre Selbstständigkeit und Bewegungsfreiheit – für hohe Lebensqualität im Alter.</p>
+      </header>
+
+      <div class="living__media" data-reveal>
+        <!-- FOTO-KARUSSELL (Außen- und Detailansichten, keine bewohnten Räume,
+             bewusst ohne Bildunterschrift). ✏️ BILDER TAUSCHEN: Dateien in
+             assets/images/ durch Fotos GLEICHEN NAMENS ersetzen (Querformat 3:2,
+             ca. 1600×1067). Bildbeschreibung für die Vorlesefunktion = alt="…".
+             Anleitung: WARTUNG.md Kap. 5 -->
+        <div class="carousel carousel--photos" data-carousel>
+          <div class="carousel__viewport" role="region" aria-roledescription="Galerie" aria-label="Fotos der Wohnanlage" tabindex="0">
+            <ul class="carousel__track" role="list">
+              <li class="carousel__slide">
+                <figure>
+                  <img src="assets/images/galerie-01-innenhof.jpg" width="1600" height="1067" alt="Innenhof der Wohnanlage: Klinkerbauten mit Laubengängen und gelben Haustüren, kugelförmig geschnittene Bäumchen und Blumenbeete, davor gepflasterte Stellplätze" loading="lazy">
+                </figure>
+              </li>
+              <li class="carousel__slide">
+                <figure>
+                  <img src="assets/images/galerie-02-laubengang.jpg" width="1600" height="1067" alt="Überdachter Laubengang im Obergeschoss mit Brüstung und Blumen vor einer Haustür, dahinter hohe Laubbäume" loading="lazy">
+                </figure>
+              </li>
+              <li class="carousel__slide">
+                <figure>
+                  <img src="assets/images/galerie-03-gartenweg.jpg" width="1600" height="1067" alt="Blick von einem Balkon auf den Garten zwischen den Häusern: Rasen, Hecken und ein geschwungener Weg, links eine Klinkerfassade mit Balkonen" loading="lazy">
+                </figure>
+              </li>
+              <li class="carousel__slide">
+                <figure>
+                  <img src="assets/images/galerie-04-fassade.jpg" width="1600" height="1067" alt="Klinkerfassade mit durchlaufenden Balkonen und Laubengängen, eingerahmt von Baumzweigen" loading="lazy">
+                </figure>
+              </li>
+              <li class="carousel__slide">
+                <figure>
+                  <img src="assets/images/galerie-05-beete.jpg" width="1600" height="1067" alt="Blühende Rosenbeete und Bäumchen vor den Hauseingängen mit gelben Türen" loading="lazy">
+                </figure>
+              </li>
+              <li class="carousel__slide">
+                <figure>
+                  <img src="assets/images/galerie-06-gartenhof.jpg" width="1600" height="1067" alt="Blick von oben auf den Gartenhof zwischen den Klinkerbauten: Rasenflächen, Hecken und Wege" loading="lazy">
+                </figure>
+              </li>
+            </ul>
+          </div>
+          <!-- ⚠️ NICHT ÄNDERN (Technik): Karussell-Bedienung, wird per
+               JavaScript aktiviert; ohne JavaScript ist die Galerie wischbar -->
+          <div class="carousel__controls" hidden data-carousel-controls>
+            <button class="carousel__btn" type="button" data-carousel-prev aria-label="Vorheriges Bild">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <p class="carousel__status" data-carousel-status aria-live="polite">Bild 1 von 6</p>
+            <button class="carousel__btn" type="button" data-carousel-next aria-label="Nächstes Bild">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✏️ HIER ÄNDERN: Leitsatz mittig unter der Bildergalerie -->
+      <p class="living__intro" data-reveal>Uns ist wichtig, dass Sie sich bei uns wohl fühlen. Dafür bieten wir Ihnen einen hohen Standard, der Barrierefreiheit mit Komfort und Begegnungsräumen verbindet.</p>
+    </div>
+
+    <!-- Ausstattung — mittig unter der Galerie -->
+    <div class="u-container">
+      <div class="feature-card feature-card--centered" data-reveal>
+        <svg class="feature-card__watermark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M8 58 L8 30 L11.5 30 L11.5 24.5 L15 24.5 L15 19 L18.5 19 L18.5 13.5 L25.5 13.5 L25.5 19 L29 19 L29 24.5 L32.5 24.5 L32.5 30 L36 30 L36 58 Z"/><path fill="currentColor" opacity="0.62" d="M33 58 L33 34 L36 34 L36 29 L39 29 L39 24 L42 24 L42 19 L48 19 L48 24 L51 24 L51 29 L54 29 L54 34 L57 34 L57 58 Z"/>
+        </svg>
+        <h3>Ausstattung der Wohnräume</h3>
+        <!-- ✏️ HIER ÄNDERN: Ausstattungsliste -->
+        <ul class="feature-card__list" role="list">
+          <li>Gehobene Wohnausstattung</li>
+          <li>Balkon oder Terrasse</li>
+          <li>Fußbodenheizung</li>
+          <li>Seniorengerechtes Bad</li>
+          <li>Aufzug</li>
+          <li>Toranlage</li>
+          <li>Auto- und Fahrradstellplätze</li>
+          <li>Ansprechende Architektur mit Laubengängen</li>
+          <li>Gepflegte Grünanlagen</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WOHNUNGEN & GRUNDRISSE
+       ============================================================ -->
+  <section class="flats" id="wohnungen" aria-labelledby="wohnungen-titel">
+    <div class="u-container">
+      <header class="section-head" data-reveal>
+        <p class="section-head__eyebrow">Wohnungstypen</p>
+        <!-- ✏️ HIER ÄNDERN: Überschrift und Einleitung -->
+        <h2 id="wohnungen-titel">Verschiedene Wohnungstypen – ein Zuhause nach Maß</h2>
+        <p class="section-head__lead">Vom kompakten Apartment bis zum Penthouse mit Dachterrasse, ob Paarwohnung oder Single-Apartment – für jede Lebenslage haben wir eine Lösung.</p>
+      </header>
+
+      <!-- GRUNDRISS-KARUSSELL: sechs echte Wohnungen als Ausschnitte aus den
+           Architektenplänen (Stand 11/2024). Die Bilder entstehen mit
+           entwicklung/grundrisse/grundriss_ausschnitte.py — NICHT von Hand
+           ersetzen (Anleitung: WARTUNG.md Kap. 5).
+           Bewusst ohne Bildunterschrift (Nutzerentscheid 2026-10).
+           ✏️ HIER ÄNDERN: Beschreibung für die Vorlesefunktion in alt="…".
+           Keine Wohnungsnummern/Etagen/Verfügbarkeiten nennen (§ 87 GEG, Kap. 8). -->
+      <div class="carousel carousel--plans" data-carousel data-reveal>
+        <div class="carousel__viewport" role="region" aria-roledescription="Galerie" aria-label="Grundrisse der Wohnungstypen" tabindex="0">
+          <ul class="carousel__track" role="list">
+            <li class="carousel__slide">
+              <figure>
+                <img src="assets/images/grundriss-typ-a.png" width="2000" height="1500" alt="Beispielgrundriss Typ A: 2 Zimmer mit 51 Quadratmetern Wohnfläche – Wohn- und Essbereich mit Zugang zur Loggia, Schlafzimmer, Küche, Bad, Flur und Abstellraum" loading="lazy">
+                <div class="carousel__zoom-row"><a class="carousel__zoom" href="assets/images/grundriss-typ-a.png">Grundriss vergrößern<span class="u-visually-hidden"> (Typ A)</span></a></div>
+              </figure>
+            </li>
+            <li class="carousel__slide">
+              <figure>
+                <img src="assets/images/grundriss-typ-b.png" width="2000" height="1500" alt="Beispielgrundriss Typ B: 2 Zimmer mit 56 Quadratmetern Wohnfläche – Wohnzimmer mit Zugang zur Terrasse, Schlafzimmer, Küche, Bad, Flur und Abstellraum" loading="lazy">
+                <div class="carousel__zoom-row"><a class="carousel__zoom" href="assets/images/grundriss-typ-b.png">Grundriss vergrößern<span class="u-visually-hidden"> (Typ B)</span></a></div>
+              </figure>
+            </li>
+            <li class="carousel__slide">
+              <figure>
+                <img src="assets/images/grundriss-typ-c.png" width="2000" height="1500" alt="Beispielgrundriss Typ C: 2 Zimmer mit 58 Quadratmetern Wohnfläche – offener Wohn-, Ess- und Kochbereich mit Zugang zum Balkon, Schlafzimmer, Bad, großer Flur und Abstellraum; teils Dachschräge" loading="lazy">
+                <div class="carousel__zoom-row"><a class="carousel__zoom" href="assets/images/grundriss-typ-c.png">Grundriss vergrößern<span class="u-visually-hidden"> (Typ C)</span></a></div>
+              </figure>
+            </li>
+            <li class="carousel__slide">
+              <figure>
+                <img src="assets/images/grundriss-typ-d.png" width="2000" height="1500" alt="Beispielgrundriss Typ D: 2 Zimmer mit 70 Quadratmetern Wohnfläche – Wohn- und Essbereich mit Zugang zur Loggia, Küche, großes Schlafzimmer, Bad, Flur und Abstellraum; teils Dachschräge" loading="lazy">
+                <div class="carousel__zoom-row"><a class="carousel__zoom" href="assets/images/grundriss-typ-d.png">Grundriss vergrößern<span class="u-visually-hidden"> (Typ D)</span></a></div>
+              </figure>
+            </li>
+            <li class="carousel__slide">
+              <figure>
+                <img src="assets/images/grundriss-typ-e.png" width="2000" height="1500" alt="Beispielgrundriss Typ E: 2 Zimmer mit 77 Quadratmetern Wohnfläche – großer Wohnraum mit Zugang zum Balkon, Küche, Schlafzimmer, Bad, großer Flur und Abstellraum" loading="lazy">
+                <div class="carousel__zoom-row"><a class="carousel__zoom" href="assets/images/grundriss-typ-e.png">Grundriss vergrößern<span class="u-visually-hidden"> (Typ E)</span></a></div>
+              </figure>
+            </li>
+            <li class="carousel__slide">
+              <figure>
+                <img src="assets/images/grundriss-typ-f.png" width="2000" height="1500" alt="Beispielgrundriss Typ F: 2 Zimmer mit 78 Quadratmetern Wohnfläche – großer Wohnraum mit Zugang zur Terrasse, Küche, Schlafzimmer, Bad, großer Flur und Abstellraum" loading="lazy">
+                <div class="carousel__zoom-row"><a class="carousel__zoom" href="assets/images/grundriss-typ-f.png">Grundriss vergrößern<span class="u-visually-hidden"> (Typ F)</span></a></div>
+              </figure>
+            </li>
+          </ul>
+        </div>
+        <!-- ⚠️ NICHT ÄNDERN (Technik) -->
+        <div class="carousel__controls" hidden data-carousel-controls>
+          <button class="carousel__btn" type="button" data-carousel-prev aria-label="Vorheriger Grundriss">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <p class="carousel__status" data-carousel-status aria-live="polite">Grundriss 1 von 6</p>
+          <button class="carousel__btn" type="button" data-carousel-next aria-label="Nächster Grundriss">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ✏️ HIER ÄNDERN: Hinweis zu den Grundrissen -->
+      <p class="flats__note" data-reveal>Beispielhafte Zusammenstellung vorhandener Grundrisse.</p>
+
+      <!-- ⚠️ VORBEREITET, DERZEIT AUS: Preisangabe.
+           Einkommentieren und Betrag eintragen, sobald der Betreiber Preise
+           veröffentlichen möchte. RECHTLICHER HINWEIS (WARTUNG.md Kap. 8):
+           Sobald konkrete Wohnungen mit Verfügbarkeit inseriert werden,
+           sind Energieausweis-Pflichtangaben nach § 87 GEG erforderlich!
+      <p class="flats__price" data-reveal>Miete ab <strong>… € / Monat</strong> zzgl. Nebenkosten und Servicepauschale – wir beraten Sie gern.</p>
+      -->
+    </div>
+  </section>
+
+  <!-- PANORAMA — vollbreites Gartenbild mit leichtem Parallax-Effekt (das Foto
+       gleitet beim Scrollen etwas langsamer als die Seite; ohne JavaScript oder bei
+       „Bewegung reduzieren“ steht es still).
+       ✏️ BILD TAUSCHEN: panorama-garten.jpg (breit, ca. 2000×960 – etwas höher als
+       der sichtbare Streifen, damit das Foto Spielraum zum Gleiten hat) -->
+  <figure class="panorama" data-parallax-frame>
+    <img src="assets/images/panorama-garten.jpg" width="2000" height="960" alt="Gartenanlage mit Obstbäumen und großer Rasenfläche vor den Klinkerbauten der Wohnanlage" loading="lazy">
+  </figure>
+
+  <!-- ============================================================
+       LAGE
+       ============================================================ -->
+  <section class="location" id="lage" aria-labelledby="lage-titel">
+    <div class="u-container location__grid">
+      <div class="location__text">
+        <header class="section-head section-head--left" data-reveal>
+          <p class="section-head__eyebrow">Lage</p>
+          <!-- ✏️ HIER ÄNDERN: Überschrift und Text zur Lage -->
+          <h2 id="lage-titel">Mitten in Hiltrup, nah an allem</h2>
+        </header>
+        <p data-reveal>In unmittelbarer Nachbarschaft finden Sie alles für den täglichen Bedarf:</p>
+        <!-- ✏️ HIER ÄNDERN: Liste der Orte in der Nähe -->
+        <ul class="location__pois" role="list" data-reveal>
+          <li>Lebensmittelmärkte</li>
+          <li>Apotheken und Ärzte</li>
+          <li>Bushaltestelle</li>
+          <li>Altenhilfe-Zentrum St. Clemens</li>
+          <li>Banken</li>
+          <li>Kirchen</li>
+        </ul>
+        <p data-reveal>Und auch die Münsteraner Innenstadt ist mit öffentlichen Verkehrsmitteln schnell erreichbar.</p>
+        <address class="location__address" data-reveal>
+          <h3>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Anschrift
+          </h3>
+          <!-- ✏️ HIER ÄNDERN: Anschrift der Wohnanlage -->
+          <p>Hoffmann-von-Fallersleben-Weg 30+32, 53+55<br>
+          48165 Münster (Hiltrup)</p>
+        </address>
+      </div>
+      <div class="location__media" data-reveal>
+        <!-- ⚠️ NICHT ÄNDERN (Technik): Die Lagekarte ist eine maßstabsgetreue
+             Vektorkarte aus OpenStreetMap-Daten (erzeugt mit
+             entwicklung/karte/render_map.py). Zum Aktualisieren siehe
+             WARTUNG.md. Zoomen per Mausrad/Ziehen/Fingergeste/Tasten -->
+        <figure class="mapbox" data-map>
+          <div class="mapbox__frame">
+            <img class="mapbox__img" id="lagekarte-bild" src="assets/images/lagekarte-hiltrup.svg"
+                 width="2280" height="2078" draggable="false" loading="lazy"
+                 alt="Lagekarte von Münster-Hiltrup: die Wohnanlage am Hoffmann-von-Fallersleben-Weg, dazu Supermarkt, Apotheke, Ärztezentrum, Kirchen, Bücherei, Bank und Krankenhaus in der fußläufigen Umgebung">
+            <div class="mapbox__controls" hidden data-map-controls aria-hidden="true">
+              <button type="button" class="mapbox__btn" data-map-zoom="in" aria-label="Karte vergrößern">+</button>
+              <button type="button" class="mapbox__btn" data-map-zoom="out" aria-label="Karte verkleinern">&minus;</button>
+              <button type="button" class="mapbox__btn" data-map-zoom="reset" aria-label="Kartenansicht zurücksetzen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+              </button>
+            </div>
+          </div>
+          <figcaption class="mapbox__caption"><span hidden data-map-hinweis>Zum Erkunden: die Tasten + / − oder zwei Finger zum Zoomen und Verschieben. </span>Kartendaten © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap-Mitwirkende<span class="u-visually-hidden"> (öffnet in neuem Fenster, externe Website)</span></a>, Lizenz: Open Database License (ODbL).</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       KONTAKT (dunkle Sektion)
+       ============================================================ -->
+  <section class="contact" id="kontakt" aria-labelledby="kontakt-titel">
+    <div class="u-container">
+      <header class="section-head" data-reveal>
+        <p class="section-head__eyebrow section-head__eyebrow--on-dark">Kontakt</p>
+        <h2 id="kontakt-titel" class="section-head__title--on-dark">Wir sind für Sie da</h2>
+      </header>
+
+      <div class="contact__grid">
+        <div class="contact__person" data-reveal>
+          <!-- ✏️ BILD TAUSCHEN: ansprechpartnerin.jpg (quadratisch, ca. 800×800).
+               WICHTIG: schriftliche Einwilligung der abgebildeten Person einholen! -->
+          <img class="contact__portrait" src="assets/images/ansprechpartnerin.jpg" width="800" height="800"
+               alt="Symbolbild: Ihr Ansprechpartner Jens Damnig, Service und Beratung" loading="lazy">
+          <div class="contact__person-details">
+            <!-- ✏️ HIER ÄNDERN: Name und Funktion des Ansprechpartners -->
+            <h3>Jens Damnig</h3>
+            <p class="contact__role">Service &amp; Beratung</p>
+            <ul class="contact__channels" role="list">
+              <li>
+                <a href="tel:+492501448014">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.05 12.05 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.05 12.05 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                  02501 4480-14
+                </a>
+              </li>
+              <li>
+                <a href="mailto:service@altenhilfe-zentrum.de">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                  service@altenhilfe-zentrum.de
+                </a>
+              </li>
+            </ul>
+            <p class="contact__appointment">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>
+              </svg>
+              Persönliche Termine und Besichtigungen nach Absprache
+            </p>
+          </div>
+        </div>
+
+        <div class="hours-card" data-reveal>
+            <h3>Telefonische Erreichbarkeit</h3>
+            <!-- ⚠️ NICHT ÄNDERN (Technik): Live-Anzeige „Jetzt erreichbar“ —
+                 erscheint nur mit JavaScript und liest die Zeiten aus der
+                 Tabelle unten (data-von/data-bis). -->
+            <p class="hours-card__status" hidden data-erreichbar>
+              <span class="hours-card__status-dot" aria-hidden="true"></span>
+              <span data-erreichbar-text></span>
+            </p>
+            <!-- ✏️ HIER ÄNDERN: Erreichbarkeitszeiten.
+                 ⚠️ Die Attribute data-tag (1 = Montag … 5 = Freitag) sowie
+                 data-von/data-bis (24-Stunden-Format HH:MM) bitte stehen lassen
+                 und mitpflegen — sie steuern die „heute“-Markierung und die
+                 Live-Anzeige. Neue Zeile: eine bestehende kopieren und Tag,
+                 Zeiten und Sichtbartext anpassen. -->
+            <table class="hours-table">
+              <caption class="u-visually-hidden">Telefonische Erreichbarkeit nach Wochentagen</caption>
+              <tbody>
+                <tr data-tag="1" data-von="13:00" data-bis="15:00"><th scope="row">Montag</th><td>13:00&nbsp;–&nbsp;15:00&nbsp;Uhr</td></tr>
+                <tr data-tag="4" data-von="10:00" data-bis="12:00"><th scope="row">Donnerstag</th><td>10:00&nbsp;–&nbsp;12:00&nbsp;Uhr</td></tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FUSSBEREICH
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="u-container site-footer__inner">
+    <p class="site-footer__brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M8 58 L8 30 L11.5 30 L11.5 24.5 L15 24.5 L15 19 L18.5 19 L18.5 13.5 L25.5 13.5 L25.5 19 L29 19 L29 24.5 L32.5 24.5 L32.5 30 L36 30 L36 58 Z"/><path fill="currentColor" opacity="0.62" d="M33 58 L33 34 L36 34 L36 29 L39 29 L39 24 L42 24 L42 19 L48 19 L48 24 L51 24 L51 29 L54 29 L54 34 L57 34 L57 58 Z"/>
+      </svg>
+      <!-- ✏️ HIER ÄNDERN: Betreiberin im Fußbereich.
+           Das Jahr aktualisiert sich automatisch (JavaScript);
+           die Zahl hier ist nur der Ersatzwert ohne JavaScript. -->
+      <span>© <span data-jahr>2026</span> Betreutes Wohnen Münster · Grundstücksverwertung Storkamp GmbH&nbsp;&amp;&nbsp;Co.&nbsp;KG</span>
+    </p>
+    <nav class="site-footer__legal" aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ⚠️ NICHT ÄNDERN (Technik): „Zurück nach oben“-Knopf, erscheint per JavaScript -->
+<a class="to-top" href="#start" hidden data-to-top>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m18 15-6-6-6 6"/></svg>
+  <span class="u-visually-hidden">Zurück nach oben</span>
+</a>
+
+</body>
+</html>

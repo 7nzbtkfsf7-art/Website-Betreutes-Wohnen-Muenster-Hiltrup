@@ -1,0 +1,7 @@
+# Betreutes Wohnen Münster — Suchmaschinen-Anweisungen
+# HIER ÄNDERN: „beispiel-domain.de“ vor Livegang durch die echte Domain
+# ersetzen (siehe WARTUNG.md, Kapitel „Vor dem Livegang“).
+User-agent: *
+Allow: /
+
+Sitemap: https://www.beispiel-domain.de/sitemap.xml
