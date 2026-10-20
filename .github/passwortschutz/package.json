@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Werkzeug für den Passwortschutz der Vorschau (wird nur beim Veröffentlichen benutzt)",
+  "dependencies": {
+    "staticrypt": "3.5.4"
+  }
+}

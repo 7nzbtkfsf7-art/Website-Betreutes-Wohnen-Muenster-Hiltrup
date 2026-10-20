@@ -1,0 +1,119 @@
+# Veröffentlicht die Website bei jeder Änderung auf dem Branch main über GitHub Pages.
+#
+# Vorschau-Modus (PASSWORTSCHUTZ: an): Jede HTML-Seite wird mit StatiCrypt verschlüsselt
+# und erst nach Eingabe des Passworts angezeigt. Das Passwort steht nur im Repository-Secret
+# VORSCHAU_PASSWORT, nie im Code. Fehlt es, wird nichts veröffentlicht.
+#
+# Zum Release PASSWORTSCHUTZ auf "aus" setzen: Dann geht die Seite ohne Passwortabfrage online.
+
+name: Website veröffentlichen
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  PASSWORTSCHUTZ: an
+
+# Nur eine Veröffentlichung gleichzeitig; eine laufende wird nicht abgebrochen.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  bauen:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      ordner: ${{ steps.ordner.outputs.ordner }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Website-Ordner finden
+        id: ordner
+        run: |
+          if [ -f index.html ]; then
+            ordner=.
+          else
+            # Häufiger Fall beim Hochladen: der ganze Ordner statt nur seines Inhalts.
+            mapfile -t kandidaten < <(find . -mindepth 2 -maxdepth 2 -name index.html -not -path './.*' -printf '%h\n')
+            mapfile -t hochgeladen < <(find . -mindepth 1 -maxdepth 1 -not -name .git -not -name .github \
+              -not -name .gitignore -not -name README.md)
+            if [ ${#kandidaten[@]} -eq 1 ]; then
+              ordner=${kandidaten[0]}
+              echo "::notice title=Website-Ordner::Die Startseite liegt in ${ordner#./}, dieser Ordner wird veröffentlicht."
+            elif [ ${#hochgeladen[@]} -eq 0 ]; then
+              echo "::notice title=Noch keine Website::Sobald die Website-Dateien hochgeladen sind, wird die Seite automatisch veröffentlicht."
+              exit 0
+            else
+              echo "::error title=Startseite fehlt::Die Datei index.html (klein geschrieben) muss direkt im Hauptordner des Repositorys liegen."
+              exit 1
+            fi
+          fi
+          echo "ordner=$ordner" >> "$GITHUB_OUTPUT"
+
+      - name: Website-Dateien zusammenstellen
+        if: steps.ordner.outputs.ordner != ''
+        env:
+          ORDNER: ${{ steps.ordner.outputs.ordner }}
+        run: |
+          quelle="$RUNNER_TEMP/quelle"
+          mkdir -p "$quelle"
+          cp -a "$ORDNER"/. "$quelle"/
+          # Was nur zum Repository gehört, nicht zur Website
+          rm -rf "$quelle"/.git "$quelle"/.github "$quelle"/.gitignore "$quelle"/README.md
+          find "$quelle" \( -name .DS_Store -o -name Thumbs.db \) -delete
+
+      - name: Passwortschutz einbauen
+        if: steps.ordner.outputs.ordner != '' && env.PASSWORTSCHUTZ != 'aus'
+        env:
+          STATICRYPT_PASSWORD: ${{ secrets.VORSCHAU_PASSWORT }}
+        run: |
+          if [ -z "$STATICRYPT_PASSWORD" ]; then
+            echo "::error title=Passwort fehlt::Unter Settings > Secrets and variables > Actions das Repository-Secret VORSCHAU_PASSWORT anlegen. Ohne Passwort wird nichts veröffentlicht."
+            exit 1
+          fi
+          # Feste Versionen aus package-lock.json, damit kein unbemerkt geändertes Paket das Passwort sieht
+          npm ci --prefix .github/passwortschutz --no-audit --no-fund
+          shopt -s dotglob
+          # Das Salt ist nicht geheim, es steht ohnehin in jeder verschlüsselten Seite. Solange es
+          # gleich bleibt, bleiben Besucher mit "Angemeldet bleiben" auch nach Änderungen angemeldet.
+          .github/passwortschutz/node_modules/.bin/staticrypt "$RUNNER_TEMP"/quelle/* --recursive \
+            --directory "$RUNNER_TEMP/site" \
+            --template .github/passwortschutz/anmeldeseite.html \
+            --salt 62acb09556020a6a6ddffde9bd9cf0bf --config false \
+            --remember 30 --short
+          # Sicherheitsnetz: Keine HTML-Seite darf unverschlüsselt online gehen.
+          ungeschuetzt=$(find "$RUNNER_TEMP/site" -type f \( -iname '*.html' -o -iname '*.htm' \) \
+            -exec grep -L staticryptEncryptedMsgUniqueVariableName {} + || true)
+          if [ -n "$ungeschuetzt" ]; then
+            echo "$ungeschuetzt"
+            echo "::error title=Seite nicht verschlüsselt::Die oben genannten Seiten wären ohne Passwort online gegangen. Dateiendung bitte klein schreiben: .html"
+            exit 1
+          fi
+
+      - name: Ohne Passwortschutz übernehmen
+        if: steps.ordner.outputs.ordner != '' && env.PASSWORTSCHUTZ == 'aus'
+        run: mv "$RUNNER_TEMP/quelle" "$RUNNER_TEMP/site"
+
+      - uses: actions/upload-pages-artifact@v4
+        if: steps.ordner.outputs.ordner != ''
+        with:
+          path: ${{ runner.temp }}/site
+
+  veroeffentlichen:
+    needs: bauen
+    if: needs.bauen.outputs.ordner != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
